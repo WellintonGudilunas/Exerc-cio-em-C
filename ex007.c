@@ -11,14 +11,13 @@
     int idade;
     int indiceSatisfacao;
 
-
     float quantidadeNota1 = 0;
     float quantidadeNota2 = 0;
     float quantidadeNota3 = 0;
     float quantidadeNota4 = 0;
     float quantidadeNota5 = 0;
 
-    float idadeNota1 = 0;
+    float maiorIdadeNota1 = 0;
     float somaIdade = 0;
 
     for(pesquisas = 1; pesquisas<6; pesquisas++)
@@ -31,7 +30,9 @@
         
         if (indiceSatisfacao == 1) {
             quantidadeNota1++;
-            idadeNota1 += idade;
+            if(idade > maiorIdadeNota1) {
+                maiorIdadeNota1 = idade;
+            }
         } else if (indiceSatisfacao == 2){
             quantidadeNota2++;
         } else if (indiceSatisfacao == 3) {
@@ -50,7 +51,7 @@
     printf("Quantidade nota4 %f \n", (quantidadeNota4 / 5) * 100);
     printf("Quantidade nota5 %f \n", (quantidadeNota5 / 5) * 100);
     printf("A média das idades que responderam  com a nota5 é igual a %f \n", (somaIdade / quantidadeNota5));
-    printf("A maior idade que respondeu com nota1 foi: %f", idadeNota1);
+    printf("A maior idade que respondeu com nota1 foi: %f", maiorIdadeNota1);
 
  }
  
